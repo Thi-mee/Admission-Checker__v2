@@ -40,12 +40,15 @@ button:hover{
     color: rgb(202, 202, 0);
 }
 input, select{
-    min-height: 40px;
+    min-height: 35px;
     min-width: 260px;
     border-radius: 10px;
     padding:  0 .75em;
+    padding-top: 5px;
     outline: 0;
     background-color: var(--secondary-color-10);
+    display: flex;
+    align-items: center;
 }
 .container{
     width: 50%;
@@ -97,8 +100,8 @@ input, select{
 .flex-row .imp::before{
     position: absolute;
     content: "*";
-    color: rgb(249, 68, 68);
-    font-size: 1.4rem;
+    color: rgb(249, 189, 68);
+    font-size: 1.2rem;
     left: -12px;
     top: -5px;
 }
@@ -108,8 +111,14 @@ input, select{
 }
 
 .form-latter select.grds{
-    min-width: 30%;
+    min-width: 150px;
     width: 32%;
+    margin-left: 1em;
+}
+.form-latter select.subjs{
+    min-width: 180px;
+    width: 80%;
+    max-width: 300px;
 }
 .row-header{
     padding: 0 4em;
@@ -159,17 +168,61 @@ input, select{
     font-weight: bold;
     box-shadow:  0 0 12px rgba(0, 0, 0, 0.449);
 }
+.subjectTitle{
+    display: none;
+    color: #fff;
+}
+.tag{
+    display: none;
+}
 
-
-
-@media screen and (width < 990px){
+@media screen and (width < 845px){
     .flex-row{
         flex-direction: column;
         align-items: start;
     }
-    .flex-row input,
-    .flex-row select{
+    .flex-row select,
+    .flex-row input{
         width: 100%;
+        padding: .75em;
+
+    }
+    .invisible-div{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .invisible-div > *{
+        width: 40%;
+    }
+    .invisible-div > input,
+    .invisible-div > select{
+        width: 50%;
+    }
+    .form-latter .flex-row > label{
+        color: yellow;
+    }
+    .form-latter select.subjs{
+        min-width: 170px;
+        width: 70%;
+        max-width: 50%;
+    }
+    .form-latter select.grds{
+        margin: 0;
+        min-width: 170px;
+        width: 70%;
+        max-width: 50%;
+    }
+    .subjectTitle{
+        display: block;
+    }
+    .tag{
+        display: block;
+        font-size: .9rem;
+    }
+    .row-header{
+        display: none;
     }
 }
 @media screen and (width < 900px){
