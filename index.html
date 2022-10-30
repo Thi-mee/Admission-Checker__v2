@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Checker</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/index.js"></script>
+</head>
+<body>
+    <!-- form container -->
+    <div class="container">
+        <h1 class="form__heading form__heading-big">Admission checker</h1>
+
+        <h2 class="form__section__heading" id="sectionHeading">Personal Details</h2>
+
+        <!-- display for error messages -->
+        <div class="error-display hide" id="error-display"></div>
+
+        <!-- form inputs -->
+        <div class="form-init" id="form-init">
+            <div class="flex-row">
+                <label for="fname" class="imp">First Name: </label>
+            <input type="text" name="firstName" id="fname" placeholder="Michael" autocomplete autofocus/>
+            </div>    
+            <div class="flex-row">
+                <label for="lname" class="imp">Last Name: </label>
+                <input type="text" name="lasttName" id="lname" placeholder="Doe" autocomplete/>
+            </div>    
+            <div class="flex-row">
+                <label for="email" class="imp">Email: </label>
+                <input type="email" name="email" id="email" placeholder="amy.kathie@example.com" autocomplete/>
+            </div>    
+            <div class="flex-row">
+                <label for="mobileNo" class="imp">Mobile Number: </label>
+                <input type="number" name="mobileNo" id="mobileNo" autocomplete placeholder="07000000000"/>
+            </div>    
+            <div class="flex-row">
+                <label for="DOB" class="imp">Date Of Birth: </label>
+                <input type="date" name="DOB" id="DOB"/>
+            </div>    
+            <div class="flex-row">
+                <label for="gender" class="imp">Gender: </label>
+                <select name="gender" id="gender"></select>
+            </div>    
+            <div class="flex-row">
+                <label for="SOO" class="imp">State Of Origin: </label>
+                <select  name="SOO" id="SOO"></select>
+            </div>
+        </div>
+        <div class="form-mid hide" id="form-mid">
+
+            <div class="flex-row">
+                <label for="jambScore">Jamb Score: </label>
+                <input type="number" name="jambScore" id="jambScore" min="0" max="400"/>
+            </div>
+            <div class="flex-row">
+                <label for="postJambScore">Post Jamb score: </label>
+                <input type="number" name="postJambScore" id="postJambScore" min="0" max="20"/>
+            </div> 
+        </div>
+        <div class="form-latter hide" id="form-latter">
+            <div class="flex-row row-header">
+                <span>Subject</span>
+                <span>Grade</span>
+            </div>
+            <div class="flex-row">
+                <label for="math">Mathematics: </label>
+                <select name="grades" id="mathGrade" class="grds"></select>
+            </div>
+            <div class="flex-row">
+                <label for="math">English Language: </label>
+                <select name="grades" id="englishGrade" class="grds"></select>
+            </div>
+            <div class="flex-row">
+                <select name="" id="sub1" class="subjs"></select>
+                <select name="grades" id="gradeSub1" class="grds"></select>
+            </div>
+            <div class="flex-row">
+                <select name="" id="sub2" class="subjs"></select>
+                <select name="grades" id="gradeSub2" class="grds"></select>
+            </div>
+            <div class="flex-row">
+                <select name="" id="sub3" class="subjs"></select>
+                <select name="grades" id="gradeSub3" class="grds"></select>
+            </div>
+        </div>
+
+        <!-- next Button -->
+        <button id="nextBtn">Next</button>    
+    </div>
+    <div class="display hide" id="display">
+        <div id="res" class="res"></div>
+        <button type="reset" class="try-again" onclick="refresh()">Try Again</button>
+    </div>
+</body>
+</html>
+
+
