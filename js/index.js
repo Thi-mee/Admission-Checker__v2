@@ -80,7 +80,6 @@ let examination = {
     preValuation: {
         jambScore: 0,
         postJambScore: 0,
-        grrr: 9,
         verify: function () {
             let jambScore = document.getElementById('jambScore').value
             if (!jambScore || isNaN(Number(jambScore))) {
@@ -117,51 +116,51 @@ let examination = {
         subThreeId: 0,
         subThreeScore: 0,
         verify: function () {
-            this.mathsScore = document.getElementById('mathGrade').value
-            if (this.mathsScore === '-1'){
+            let mathsScore = document.getElementById('mathGrade').value
+            if (mathsScore === '-1'){
                 examination.errorMessage = "Select Grade for Maths"
                 return 0
             }
-            this.mathsScore = Number(this.mathsScore)
-            this.englishScore = document.getElementById('englishGrade').value
-            if (this.englishScore === '-1'){
+            this.mathsScore = Number(mathsScore)
+            let englishScore = document.getElementById('englishGrade').value
+            if (englishScore === '-1'){
                 examination.errorMessage = "Select Grade for English"
                 return 0
             }
-            this.englishScore = Number(this.englishScore)
+            this.englishScore = Number(englishScore)
             this.subOneId = document.getElementById('sub1').value
             if (this.subOneId === '0'){
                 examination.errorMessage = "Select third subject"
                 return 0
             }
-            this.subOneScore = document.getElementById('gradeSub1').value
-            if (this.subOneScore === '-1'){
+            let subOneScore = document.getElementById('gradeSub1').value
+            if (subOneScore === '-1'){
                 examination.errorMessage = "Select Grade for third subject"
                 return 0
             }
-            this.subOneScore = Number(this.subOneScore)
+            this.subOneScore = Number(subOneScore)
             this.subTwoId = document.getElementById('sub2').value
             if (this.subTwoId === '0'){
                 examination.errorMessage = "Select fourth subject"
                 return 0
             }
-            this.subTwoScore = document.getElementById('gradeSub2').value
-            if (this.subTwoScore === '-1'){
+            let subTwoScore = document.getElementById('gradeSub2').value
+            if (subTwoScore === '-1'){
                 examination.errorMessage = "Select Grade for fourth subject"
                 return 0
             }
-            this.subTwoScore = Number(this.subTwoScore)
+            this.subTwoScore = Number(subTwoScore)
             this.subThreeId = document.getElementById('sub3').value
             if (this.subThreeId === '0') {
                 examination.errorMessage = "Select fifth subject"
                 return 0
             }
-            this.subThreeScore = document.getElementById('gradeSub3').value
-            if (this.subThreeScore === '-1'){
+            let subThreeScore = document.getElementById('gradeSub3').value
+            if (subThreeScore === '-1'){
                 examination.errorMessage = "Select Grade for fifth subject"
                 return 0;
             }
-            this.subThreeScore = Number(this.subThreeScore)
+            this.subThreeScore = Number(subThreeScore)
 
             examination.errorMessage = ""
             return 1;
@@ -223,7 +222,7 @@ window.addEventListener('DOMContentLoaded', () => {
         dropdown.innerHTML = `<option value="-1" disabled selected>-- please select --</option>`
         grades.forEach((grade, index) => {
             if (index === grades.length -1){
-                return  dropdown.innerHTML += `<option value=0>${grade}</option>`
+                return  dropdown.innerHTML += `<option value='0'>${grade}</option>`
             }
             dropdown.innerHTML += `<option value=${i--}>${grade}</option>`
         })
